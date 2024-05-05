@@ -18,6 +18,10 @@ if (import.meta.env.VITE_API_BASE_URL) {
 	axios.defaults.timeout = 10000;
 }
 
+if (import.meta.env.VITE_API_BASE_PORT) {
+	axios.defaults.baseURL = `${window.location.protocol}//${window.location.hostname}${import.meta.env.VITE_API_BASE_PORT}`;
+}
+
 axios.interceptors.request.use(
 	(config: AxiosRequestConfig) => {
 		if (isLogin()) {
