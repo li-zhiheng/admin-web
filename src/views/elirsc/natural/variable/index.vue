@@ -2,7 +2,7 @@
 	<div class="container">
 		<Breadcrumb />
 		<!-- :body-style="{ paddingTop: '0px' }" -->
-		<a-card class="general-card" title="供应商库指标异常变动" :body-style="{ paddingTop: '0px' }">
+		<a-card class="general-card" title="生态资源指标异常变动" :body-style="{ paddingTop: '0px' }">
 			<a-space direction="vertical" fill>
 				<a-table :bordered="false" :pagination="false" :columns="columns" :data="list">
 					<template #time="{ record }">
@@ -87,7 +87,7 @@ const changeRate = (s1, s2) => {
 
 const columns = [
 	{
-		title: '供应商名',
+		title: '生态资源名',
 		dataIndex: 'supplier.name'
 	},
 	{

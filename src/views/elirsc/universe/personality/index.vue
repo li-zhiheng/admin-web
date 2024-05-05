@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<Breadcrumb />
-		<a-card class="general-card" title="用户个性化指标偏好数据采集">
+		<a-card class="general-card" title="用户个性化偏好设置(分数越高越重要)">
 			<template #extra>
 				<a-link @click="handleSwitchType">
 					<icon-swap />
@@ -10,7 +10,7 @@
 			</template>
 			<div class="center">
 				<a-form :model="form" layout="vertical" width="100%">
-					<a-form-item field="budget" label="您认为交货日期对销售价格有多重要？" required>
+					<a-form-item field="budget" label="您认为时间的重要程度。" required>
 						<a-radio-group v-if="tp == 'radio'" v-model="form.budget">
 							<a-radio v-for="item of list" :key="item.value" :value="item.value">{{ item.label }}</a-radio>
 						</a-radio-group>
@@ -18,7 +18,7 @@
 							<a-option v-for="item of list" :key="item.value" :value="item.value" :label="item.label" />
 						</a-select>
 					</a-form-item>
-					<a-form-item field="quality" label="您认为交货日期对设备质量有多重要？" required>
+					<a-form-item field="quality" label="您认为成本的重要程度。" required>
 						<a-radio-group v-if="tp == 'radio'" v-model="form.quality">
 							<a-radio v-for="item of list" :key="item.value" :value="item.value">{{ item.label }}</a-radio>
 						</a-radio-group>
@@ -26,7 +26,7 @@
 							<a-option v-for="item of list" :key="item.value" :value="item.value" :label="item.label" />
 						</a-select>
 					</a-form-item>
-					<a-form-item field="budgetQuality" label="您认为销售价格对设备质量有多重要？" required>
+					<a-form-item field="budgetQuality" label="您认为质量的重要程度。" required>
 						<a-radio-group v-if="tp == 'radio'" v-model="form.budgetQuality">
 							<a-radio v-for="item of list" :key="item.value" :value="item.value">{{ item.label }}</a-radio>
 						</a-radio-group>
@@ -60,15 +60,15 @@ interface Form {
 const tp = ref('select');
 const form = ref<Form>({} as Form);
 const list = [
-	{ label: '极端重要', value: 0.9 },
-	{ label: '强烈重要', value: 0.8 },
-	{ label: '明显重要', value: 0.7 },
-	{ label: '稍微重要', value: 0.6 },
-	{ label: '同样重要', value: 0.5 },
-	{ label: '稍微不重要', value: 0.4 },
-	{ label: '明显不重要', value: 0.3 },
-	{ label: '强烈不重要', value: 0.2 },
-	{ label: '极端不重要', value: 0.1 }
+	{ old_label: '极端重要', label: '9', value: 0.9 },
+	{ old_label: '强烈重要', label: '8', value: 0.8 },
+	{ old_label: '明显重要', label: '7', value: 0.7 },
+	{ old_label: '稍微重要', label: '6', value: 0.6 },
+	{ old_label: '同样重要', label: '5', value: 0.5 },
+	{ old_label: '稍微不重要', label: '4', value: 0.4 },
+	{ old_label: '明显不重要', label: '3', value: 0.3 },
+	{ old_label: '强烈不重要', label: '2', value: 0.2 },
+	{ old_label: '极端不重要', label: '1', value: 0.1 }
 ];
 
 const handleSwitchType = () => {

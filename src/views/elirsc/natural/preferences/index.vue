@@ -11,7 +11,7 @@
 			<div class="center">
 				<a-form v-if="!loading" :model="form" layout="vertical" width="100%">
 					<template v-for="(item, index) in links" :key="index">
-						<a-form-item label="研发设计环节" :label-col-style="labelStyle">
+						<a-form-item :label="item.label + '环节'" :label-col-style="labelStyle">
 							<a-checkbox-group v-if="tp == 'radio'" v-model="form.names[item.value]">
 								<a-checkbox v-for="(ite, ind) in list[item.value]" :key="ind" :value="ite.value">{{ ite.lable }}</a-checkbox>
 							</a-checkbox-group>

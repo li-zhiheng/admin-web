@@ -108,11 +108,11 @@ const result = ref<ConfigureData>();
 
 const resultColumns = [
 	{
-		title: '分项',
+		title: '指标',
 		dataIndex: 'label'
 	},
 	{
-		title: '变更值',
+		title: '提升值',
 		dataIndex: 'value'
 	}
 ];
@@ -124,7 +124,7 @@ const columns = [
 		slotName: 'link'
 	},
 	{
-		title: '供应商名',
+		title: '生态资源名',
 		dataIndex: 'supplier.name'
 	},
 	{

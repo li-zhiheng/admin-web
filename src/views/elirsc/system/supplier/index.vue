@@ -55,7 +55,7 @@ const searchForm = ref<PageSupplierReq>({
 
 const columns = ref<TableCloumn[]>([
 	{
-		title: '供应商名称',
+		title: '生态资源',
 		dataIndex: 'name'
 	},
 	{
